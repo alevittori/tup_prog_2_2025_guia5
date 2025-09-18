@@ -8,7 +8,7 @@ namespace Ejercicio_1.Models
 {
      abstract internal class Validador
     {
-        string expresion;
+        protected string expresion;
 
         public Validador(string expresion) 
         {
