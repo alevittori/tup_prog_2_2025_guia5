@@ -65,7 +65,8 @@ namespace Ejercicio_1.Models
 
         public override string VerMensaje()
         {
-            return base.VerMensaje();
+            if (Validar()) { return $"{base.expresion} es valido"; }
+            return $"{base.expresion} no es valido";
         }
         
     }
