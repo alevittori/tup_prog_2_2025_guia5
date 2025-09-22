@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CuitValidador.cs" />
     <Compile Include="Models\PatentesViejasCharValidador.cs" />
     <Compile Include="Models\PatentesViejasRegexValidador.cs" />
     <Compile Include="Models\TelefonoCharValidador.cs" />

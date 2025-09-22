@@ -36,8 +36,8 @@ namespace Ejercicio_1.Models
         public override string VerMensaje()
         {
            
-            if (Validar()) { return $"{base.expresion} patente valida"; }
-            return $"{base.expresion} patenta NO valida";
+            if (Validar()) { return $"{base.expresion.ToUpper()} patente valida"; }
+            return $"{base.expresion.ToUpper()} patenta NO valida";
         }
     }
 }
