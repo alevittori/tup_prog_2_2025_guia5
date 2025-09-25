@@ -66,7 +66,8 @@ namespace Ejercicio3.Models
                             {
                                 double importe = Convert.ToDouble(importeMatch.Groups[1].Value); // creo que aca puede saltar chocolate jaja
                                 Multa nueva = new Multa(importe);
-                                multas.Add(nueva); // lo agrego a la lista de multas
+                                // multas.Add(nueva); // lo agrego a la lista de multas
+                                AgregarMulta(nueva);
                                 ret =  true;
 
                             }
