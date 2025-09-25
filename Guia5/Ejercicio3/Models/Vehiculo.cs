@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio3.Models
 {
-    internal class Vehiculo:IImportable
+    internal class Vehiculo:IImportable,IComparable<Vehiculo>
     {
         List<Multa> multas = new List<Multa>();
         public string Patente {  get; private set; }
@@ -88,6 +88,11 @@ namespace Ejercicio3.Models
         public override string ToString()
         {
             return $"Vehiculo Patente {Patente} - Importe Total a pagar: {ImporteTotal}";
+        }
+
+        public int CompareTo(Vehiculo other)
+        {
+            return this.Patente.CompareTo(other.Patente);
         }
     }
 }
