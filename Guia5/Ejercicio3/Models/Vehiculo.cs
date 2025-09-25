@@ -57,6 +57,7 @@ namespace Ejercicio3.Models
                     Match patente = Regex.Match(m.Value, @"<patente>(.*?)</patente>");
                     if (patente.Success)
                     {
+                        //aca deberia agregar la patente si no existe y despues hacer un control de que si la patente esta o no
                         string p = patente.Groups[1].Value; 
                         if(p.ToUpper() == this.Patente.ToUpper()) //por las dudas lo paso a mayusculas para comparar
                         {

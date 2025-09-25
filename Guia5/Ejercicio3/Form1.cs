@@ -13,20 +13,53 @@ namespace Ejercicio3
 {
     public partial class Form1 : Form
     {
-        List<Vehiculo> vehiculos = new List<Vehiculo>();
-        string xml = "<multa> \r\n  <patente>ACD 232</patente>\r\n  <importe>234556,00</importe>\r\n</multa> \r\n<multa>\r\n  <patente>ACE 232</patente>\r\n  <importe>234556,00</importe>\r\n</multa> \r\n<multa> \r\n  <patente>ACE 732</patente>\r\n  <importe>234556,00</importe>\r\n</multa>\r\n<multa> \r\n  <patente>ACE 232</patente>\r\n  <importe>234556,00</importe>\r\n</multa>\r\n";
-        public Form1()
-        {
-            InitializeComponent();
-        }
+        List<Vehiculo> vehiculos;
+        string xml;
+        /*
+         * la idea del ejerciico creo que es tomar un xml dado y separar las patentes, hacer un solo recorrido
+         * e ir creando los objetos vehiculos
+         * con las patentes dadas, e ir actualizando o agregando multas si la patente se repitiera.
+         * 
+         * */
 
-        private void btnPrueba_Click(object sender, EventArgs e)
-        {
-            Vehiculo auto = new Vehiculo("ACE 232");
-            auto.Importar(xml);
+        /*
+         * <multa> 
+        <patente>ACD 232</patente>
+        <importe>234556,00</importe>
+        </multa> 
+        <multa>
+        <patente>ACE 232</patente>
+        <importe>234556,00</importe>
+        </multa> 
+        <multa> 
+        <patente>ACE 732</patente>
+        <importe>234556,00</importe>
+        </multa>
+        <multa> 
+        <patente>ACE 232</patente>
+        <importe>234556,00</importe>
+        </multa>
 
-            listBox1.Items.Add(auto.CantidadMultas);
-            listBox1.Items.Add(auto.ImporteTotal);
-        }
+        */
+
+public Form1()
+{
+    InitializeComponent();
+    vehiculos = new List<Vehiculo> { new Vehiculo("ACE 232"), new Vehiculo("ACD 232"), new Vehiculo("ACE 732") };
+}
+
+private void btnPrueba_Click(object sender, EventArgs e)
+{
+
+    xml = textBox1.Text;
+    //Vehiculo auto = new Vehiculo("ACE 232");
+    //auto.Importar(xml);
+    foreach(Vehiculo ve in vehiculos)
+    {
+        ve.Importar(xml);
+        listBox1.Items.Add(ve.ToString());
     }
+
+}
+}
 }
